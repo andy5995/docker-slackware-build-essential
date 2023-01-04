@@ -6,6 +6,13 @@ Slackware environment. It can be used as a [service
 container](https://docs.github.com/en/actions/using-containerized-services/about-service-containers#creating-service-containers)
 in a GitHub action.
 
+The image can be pulled from [Docker
+Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential).
+
+Projects using this in their CI:
+
+* [rmw](https://github.com/theimpossibleastronaut/rmw)
+
 ## LICENSE
 
 The license included in this repository only applies to the files within this
