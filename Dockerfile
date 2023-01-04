@@ -12,5 +12,5 @@ RUN echo y | slackpkg install \
 
 # TODO: install slapt-get and sbopkg
 # wget https://github.com/sbopkg/sbopkg/releases/download/0.38.2/sbopkg-0.38.2-noarch-1_wsr.tgz && \
- 
+RUN update-ca-certificates --fresh
 ENTRYPOINT ["/bin/bash"] 
