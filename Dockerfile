@@ -4,7 +4,12 @@ RUN slackpkg update
 RUN echo y | slackpkg upgrade-all
 RUN echo y | slackpkg install \
   d \
-  l
+  l \
+  ca-certificates \
+  curl  \
+  cyrus-sasl  \
+  nghttp2
+
 # TODO: install slapt-get and sbopkg
 # wget https://github.com/sbopkg/sbopkg/releases/download/0.38.2/sbopkg-0.38.2-noarch-1_wsr.tgz && \
  
