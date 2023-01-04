@@ -1,3 +1,4 @@
+[![Docker Image CI](https://github.com/andy5995/docker-slackware-build-essential/actions/workflows/docker.yml/badge.svg)](https://github.com/andy5995/docker-slackware-build-essential/actions/workflows/docker.yml)
 # Slackware Build Essential Docker Image
 
 This image aims to provide the essential tools for building software in a
