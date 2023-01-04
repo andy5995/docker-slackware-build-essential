@@ -8,6 +8,7 @@ RUN echo y | slackpkg install \
   ca-certificates \
   curl  \
   cyrus-sasl  \
+  gnutls  \
   nghttp2
 
 # TODO: install slapt-get and sbopkg
