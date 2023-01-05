@@ -23,7 +23,7 @@ COPY ./$SBOPKG_NAME.sha256sum .
 RUN sha256sum -c $SBOPKG_NAME.sha256sum
 RUN installpkg $SBOPKG_NAME
 RUN rm $SBOPKG_NAME*
-RUN sbokpkg -r
+RUN sbopkg -r
 
 # TODO: install slapt-get
 
