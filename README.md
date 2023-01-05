@@ -12,7 +12,48 @@ in a GitHub action.
 The image can be pulled from [Docker
 Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential).
 
-Projects using this in their CI:
+## Example for use in a GitHub workflow
+
+```yml
+  slackware:
+    runs-on: ubuntu-latest
+    container: andy5995/slackware-build-essential:15.0
+    steps:
+    - uses: actions/checkout@v3
+    - name: Change default mirror
+      run: echo "https://mirrors.ocf.berkeley.edu/slackware/slackware-15.0/" > /etc/slackpkg/mirrors
+    - name: Install dependencies
+      run: |
+        echo n | slackpkg update
+        echo y | slackpkg install libassuan
+        #
+        # Note that in some cases, sbopkg may return 0 on error
+        # https://github.com/sbopkg/sbopkg/issues/85
+        sbopkg -r
+        sbopkg -B -i Pykka -e stop
+    - name: Build and test with meson
+      run: |
+        meson setup _build
+        cd _build
+        meson compile
+        meson test
+```
+
+If you would like to randomly rotate the mirror used each time:
+
+```yml
+    - name: Change default mirror
+      run: |
+        mirror=( \
+          http://ftp.sunet.se/mirror/slackware.com/slackware64-15.0/ \
+          http://ftp.tu-chemnitz.de/pub/linux/slackware/slackware64-15.0/ \
+          http://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/    \
+          http://slackware.mirrors.tds.net/pub/slackware/slackware64-15.0/
+        )
+        echo ${mirror[ $RANDOM % 4]} > /etc/slackpkg/mirrors
+```
+  
+## Projects using this in their CI:
 
 * [rmw](https://github.com/theimpossibleastronaut/rmw)
 
