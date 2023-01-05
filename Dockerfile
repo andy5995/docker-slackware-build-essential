@@ -15,6 +15,7 @@ RUN echo y | slackpkg install \
 RUN update-ca-certificates --fresh
 
 # Get and install sbopkg
+ARG SBOPKG_NAME
 RUN wget -nv https://github.com/sbopkg/sbopkg/releases/download/$SBOPKG_VER/$SBOPKG_NAME
 COPY ./$SBOPKG_NAME.sha256sum .
 RUN sha256sum -c $SBOPKG_NAME.sha256sum
