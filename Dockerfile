@@ -1,5 +1,5 @@
 FROM vbatts/slackware:15.0
-RUN echo "https://mirrors.kernel.org/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
+RUN echo "http://mirrors.us.kernel.org/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
 RUN echo y | slackpkg update
 RUN echo y | slackpkg upgrade-all
 RUN echo y | slackpkg install \
