@@ -38,6 +38,7 @@ jobs:
           context: .
           file: ./Dockerfile
           build-args: |
+            SBOPKG_VER=${{ env.SBOPKG_VER }}
             SBOPKG_NAME=sbopkg-${{ env.SBOPKG_VER }}-noarch-1_wsr.tgz
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/slackware-build-essential:15.0
