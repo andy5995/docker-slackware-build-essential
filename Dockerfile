@@ -1,6 +1,6 @@
 FROM vbatts/slackware:15.0
 RUN echo "http://spout.ussg.indiana.edu/linux/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
-RUN slackpkg update
+RUN echo y | slackpkg update
 RUN echo y | slackpkg upgrade-all
 RUN echo y | slackpkg install \
   d \
@@ -9,9 +9,19 @@ RUN echo y | slackpkg install \
   curl  \
   cyrus-sasl  \
   gnutls  \
-  nghttp2
+  nghttp2 \
+  rsync
 
-# TODO: install slapt-get and sbopkg
-# wget https://github.com/sbopkg/sbopkg/releases/download/0.38.2/sbopkg-0.38.2-noarch-1_wsr.tgz && \
 RUN update-ca-certificates --fresh
+
+# Get and install sbopkg
+RUN wget -nv https://github.com/sbopkg/sbopkg/releases/download/$SBOPKG_VER/$SBOPKG_NAME
+COPY ./$SBOPKG_NAME.sha256sum .
+RUN sha256sum -c $SBOPKG_NAME.sha256sum
+RUN installpkg $SBOPKG_NAME
+RUN rm $SBOPKG_NAME*
+RUN sbokpkg -r
+
+# TODO: install slapt-get
+
 ENTRYPOINT ["/bin/bash"] 

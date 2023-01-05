@@ -6,6 +6,9 @@ Slackware environment. It can be used as a [service
 container](https://docs.github.com/en/actions/using-containerized-services/about-service-containers#creating-service-containers)
 in a GitHub action.
 
+[sbopkg](https://sbopkg.org/) (a tool to synchronize with the
+[SlackBuilds.org](https://www.slackbuilds.org/) repository) is included.
+
 The image can be pulled from [Docker
 Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential).
 
