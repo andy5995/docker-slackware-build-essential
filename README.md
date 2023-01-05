@@ -56,6 +56,7 @@ If you would like to randomly rotate the mirror used each time:
 ## Projects using this in their CI:
 
 * [rmw](https://github.com/theimpossibleastronaut/rmw)
+* [curl](https://github.com/curl/curl)
 
 ## Building the Image Locally
 
