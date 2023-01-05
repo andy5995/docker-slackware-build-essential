@@ -57,6 +57,13 @@ If you would like to randomly rotate the mirror used each time:
 
 * [rmw](https://github.com/theimpossibleastronaut/rmw)
 
+## Building the Image Locally
+
+    SBOPKG_VER=0.38.2 && docker build -t <name:tag> \
+      --build-arg SBOPKG_VER=$SBOPKG_VER  \
+      --build-arg SBOPKG_NAME=sbopkg-$SBO_VER-noarch-1_wsr.tgz  \
+      .
+
 ## LICENSE
 
 The license included in this repository only applies to the files within this
