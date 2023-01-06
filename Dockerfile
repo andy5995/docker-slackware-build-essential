@@ -25,6 +25,13 @@ RUN installpkg $SBOPKG_NAME
 RUN rm $SBOPKG_NAME*
 RUN sbopkg -r
 
-# TODO: install slapt-get
+# Install slapt-get
+COPY slapt-get /slapt-get
+WORKDIR /slapt-get
+RUN ./slapt-get.Slackbuild
+RUN installpkg slapt*txz
+WORKDIR /
+RUN rm -rf slapt-get
+RUN slapt-get -u
 
 ENTRYPOINT ["/bin/bash"] 
