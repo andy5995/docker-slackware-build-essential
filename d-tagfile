@@ -10,6 +10,7 @@ gcc
 gcc-g++
 gettext-tools
 git
+guile
 intltool
 kernel-headers
 libtool
