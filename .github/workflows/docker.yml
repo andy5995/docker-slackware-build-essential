@@ -7,11 +7,7 @@ on:
     paths:
       - '.github/workflows/docker.yml'
       - 'Dockerfile'
-  pull_request:
-    branches: [ "trunk" ]
-    paths:
-      - '.github/workflows/docker.yml'
-      - 'Dockerfile'
+      - '**tagfile'
 
 jobs:
   docker:
