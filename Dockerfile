@@ -1,10 +1,12 @@
 FROM vbatts/slackware:15.0
 RUN echo "http://mirrors.us.kernel.org/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
-RUN echo y | slackpkg update
+RUN echo n | slackpkg update
 RUN echo y | slackpkg upgrade-all
+COPY d-tagfile .
+COPY l-tagfile .
+RUN echo y | slackpkg install $(cat d-tagfile)
+RUN echo y | slackpkg install $(cat l-tagfile)
 RUN echo y | slackpkg install \
-  d \
-  l \
   ca-certificates \
   curl  \
   cyrus-sasl  \
