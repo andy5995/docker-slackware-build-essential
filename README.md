@@ -6,11 +6,15 @@ Slackware environment. It can be used as a [service
 container](https://docs.github.com/en/actions/using-containerized-services/about-service-containers#creating-service-containers)
 in a GitHub action.
 
-[sbopkg](https://sbopkg.org/) (a tool to synchronize with the
-[SlackBuilds.org](https://www.slackbuilds.org/) repository) is included.
-
 The image can be pulled from [Docker
 Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential).
+
+## Included package managers
+
+* pkgtools
+* slackpkg
+* [sbopkg](https://sbopkg.org/)
+* [slapt-get](https://github.com/jaos/slapt-get)
 
 ## Example for use in a GitHub workflow
 
@@ -31,6 +35,8 @@ Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential
         # https://github.com/sbopkg/sbopkg/issues/85
         sbopkg -r
         sbopkg -B -i Pykka -e stop
+        slapt-get -u
+        slapt-get --install libX11
     - name: Build and test with meson
       run: |
         meson setup _build
@@ -39,7 +45,9 @@ Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential
         meson test
 ```
 
-If you would like to randomly rotate the mirror used each time:
+If you would like to randomly rotate the
+[mirror](https://ftp.ussg.indiana.edu/linux/slackware/slackware64/source/ap/slackpkg/files/mirrors-x86_64.sample)
+used each time:
 
 ```yml
     - name: Change default mirror
