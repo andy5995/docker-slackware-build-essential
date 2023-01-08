@@ -62,6 +62,7 @@ gvfs
 harfbuzz
 hyphen
 icon-naming-utils
+icu4c
 id3lib
 isl
 iso-codes

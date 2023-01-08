@@ -11,10 +11,14 @@ Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential
 
 ## Included package managers
 
-* pkgtools
-* slackpkg
+* [slackpkg](https://docs.slackware.com/slackware:slackpkg)
 * [sbopkg](https://sbopkg.org/)
 * [slapt-get](https://github.com/jaos/slapt-get)
+* [slpkg](https://dslackw.gitlab.io/slpkg/)
+
+If you're not familiar with any of these, see the pages linked. You may also
+post a question in the
+[Discussions](https://github.com/andy5995/docker-slackware-build-essential/discussions).
 
 ## Example for use in a GitHub workflow
 
