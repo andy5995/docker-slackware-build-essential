@@ -20,7 +20,7 @@ RUN update-ca-certificates --fresh
 ARG SBOPKG_VER
 ARG SBOPKG_NAME
 COPY ./$SBOPKG_NAME.sha256sum .
-RUN /bin/bash -c 'wget -nv https://github.com/sbopkg/sbopkg/releases/download/$SBOPKG_VER/$SBOPKG_NAME && \
+RUN /bin/bash -c 'curl -LO https://github.com/sbopkg/sbopkg/releases/download/$SBOPKG_VER/$SBOPKG_NAME && \
   sha256sum -c $SBOPKG_NAME.sha256sum &&  \
   installpkg $SBOPKG_NAME &&  \
   rm $SBOPKG_NAME*'
