@@ -64,6 +64,18 @@ used each time:
         )
         echo ${mirror[ $RANDOM % 4]} > /etc/slackpkg/mirrors
 ```
+
+## Customize
+
+This is a [template
+repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template),
+which means you can create a repository from this repo, then customize the
+Dockerfile to include all the dependencies your projects needs. You can push
+your new image directly to [Docker Hub after creating a few access
+tokens](https://docs.docker.com/build/ci/github-actions/).
+
+When you're ready to use the image in your new workflow, simply change the
+'container' line (shown in the example workflow above).
   
 ## Projects using this in their CI:
 
