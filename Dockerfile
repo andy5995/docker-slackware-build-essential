@@ -42,4 +42,4 @@ RUN /bin/bash -c 'cd /slapt-get && \
   rm -rf slapt-get'
 RUN slapt-get -u
 
-ENTRYPOINT ["/bin/bash"] 
+CMD ["/bin/bash","-l"]
