@@ -1,6 +1,10 @@
 FROM vbatts/slackware:15.0
+
 USER root
-ENV USER=root # why doesn't this get set automatically, like HOME does?
+
+# why doesn't this get set automatically, like HOME does?
+ENV USER=root
+
 RUN echo "http://mirrors.us.kernel.org/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
 RUN echo n | slackpkg update
 RUN echo y | slackpkg upgrade-all
