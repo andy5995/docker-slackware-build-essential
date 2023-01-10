@@ -6,13 +6,7 @@ COPY *tagfile .
 RUN echo y | slackpkg install $(cat ap-tagfile)
 RUN echo y | slackpkg install $(cat d-tagfile)
 RUN echo y | slackpkg install $(cat l-tagfile)
-RUN echo y | slackpkg install \
-  ca-certificates \
-  curl  \
-  cyrus-sasl  \
-  gnutls  \
-  nghttp2 \
-  rsync
+RUN echo y | slackpkg install $(cat n-tagfile)
 
 RUN update-ca-certificates --fresh
 

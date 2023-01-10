@@ -1,0 +1,8 @@
+ca-certificates
+curl
+cyrus-sasl
+gnutls
+nettle
+nghttp2
+p11-kit
+rsync
