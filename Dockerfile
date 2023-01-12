@@ -7,7 +7,10 @@ ENV USER=root
 
 RUN echo "http://mirrors.us.kernel.org/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
 RUN echo n | slackpkg update
-RUN echo y | slackpkg upgrade-all
+
+# Returns an error if there are no packages to upgrade
+# RUN echo y | slackpkg upgrade-all
+
 COPY *tagfile .
 RUN echo y | slackpkg install $(cat ap-tagfile)
 RUN echo y | slackpkg install $(cat d-tagfile)
