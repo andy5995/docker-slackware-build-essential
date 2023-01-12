@@ -1,4 +1,4 @@
-FROM vbatts/slackware:15.0
+FROM andy5995/slackware:15.0
 
 USER root
 
