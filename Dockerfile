@@ -49,4 +49,23 @@ RUN /bin/bash -c 'cd /slapt-get && \
   rm -rf slapt-get'
 RUN slapt-get -u
 
+# Tests
+# This just tests to make sure some basic development tools are
+# installed and their dependencies are satisfied.
+RUN /bin/bash -c 'cd /tmp \
+  && curl -LO https://github.com/curl/curl/releases/download/curl-7_87_0/curl-7.87.0.tar.xz \
+  && tar xf curl*xz -C /tmp \
+  && cd /tmp/curl-7.87.0 \
+  && autoreconf -if \
+  && mkdir build && cd build \
+  && ../configure --enable-warnings --enable-werror --with-openssl \
+  && make -j$(nproc) \
+  && make -C tests -j$(nproc) \
+  && cd .. && rm -rf build && mkdir build && cd build \
+  && ../configure --enable-warnings --enable-werror --with-gnutls \
+  && make -j$(nproc) \
+  && make -C tests -j$(nproc) \
+  && cd \
+  && rm -rf /tmp/curl*'
+
 CMD ["/bin/bash","-l"]
