@@ -68,4 +68,16 @@ RUN /bin/bash -c 'cd /tmp \
   && cd \
   && rm -rf /tmp/curl*'
 
+# Test a meson build
+RUN /bin/bash -c 'cd /tmp \
+  && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v0.8.1/rmw-0.8.1.tar.gz \
+  && tar xf rmw-0.8.1.tar.gz \
+  && cd rmw-0.8.1 \
+  && meson setup _build \
+  && cd _build \
+  && meson compile \
+  && meson test \
+  && cd / \
+  && rm -rf /tmp/rmw* '
+
 CMD ["/bin/bash","-l"]
