@@ -11,12 +11,245 @@ RUN echo n | slackpkg update
 #Returns an error if there are no packages to upgrade
 RUN echo y | slackpkg upgrade-all || true
 
-COPY *tagfile ./
-RUN echo y | slackpkg install $(cat a-tagfile)
-RUN echo y | slackpkg install $(cat ap-tagfile)
-RUN echo y | slackpkg install $(cat d-tagfile)
-RUN echo y | slackpkg install $(cat l-tagfile)
-RUN echo y | slackpkg install $(cat n-tagfile)
+# series a
+RUN echo y | slackpkg install \
+      dcron
+
+# series ap
+RUN echo y | slackpkg install \
+      sqlite
+
+# series d
+RUN echo y | slackpkg install \
+      autoconf \
+      autoconf-archive \
+      automake \
+      binutils \
+      bison \
+      cmake \
+      doxygen \
+      flex \
+      gcc \
+      gcc-g++ \
+      gettext-tools \
+      git \
+      guile \
+      intltool \
+      kernel-headers \
+      libtool \
+      llvm \
+      m4 \
+      make \
+      meson \
+      ninja \
+      opencl-headers \
+      perl \
+      pkg-config \
+      python-pip \
+      python-setuptools \
+      python2 \
+      python3 \
+      ruby \
+      rust \
+      sassc \
+      strace
+
+# series l
+RUN echo y | slackpkg install \
+      M2Crypto \
+      Mako \
+      brotli \
+      cfitsio \
+      chmlib \
+      clucene \
+      cryfs \
+      dotconf \
+      eigen3 \
+      elfutils \
+      exiv2 \
+      expat \
+      farstream \
+      fftw \
+      gc \
+      gcr \
+      gd \
+      gegl \
+      gexiv2 \
+      giflib \
+      gjs \
+      glib \
+      glib-networking \
+      glib2 \
+      glibc \
+      glibc-i18n \
+      glibc-profile \
+      glibmm \
+      gmime \
+      gmm \
+      gmp \
+      gnu-efi \
+      gobject-introspection \
+      grantlee \
+      graphene \
+      graphite2 \
+      gsl \
+      gvfs \
+      harfbuzz \
+      hyphen \
+      icon-naming-utils \
+      icu4c \
+      id3lib \
+      isl \
+      iso-codes \
+      jansson \
+      jemalloc \
+      kdsoap \
+      keybinder3 \
+      libarchive \
+      libasyncns \
+      libatasmart \
+      libcanberra \
+      libcap \
+      libcap-ng \
+      libclc \
+      libcue \
+      libdmtx \
+      libedit \
+      libevent \
+      libexif \
+      libfakekey \
+      libffi \
+      libgnome-keyring \
+      libgnt \
+      libgpod \
+      libgsf \
+      libgtop \
+      libical \
+      libidl \
+      libidn \
+      libidn2 \
+      libmcrypt \
+      libmng \
+      libmpc \
+      libnih \
+      libnjb \
+      libnl \
+      libnl3 \
+      libnsl \
+      libnss_nis \
+      libodfgen \
+      libopusenc \
+      libpcap \
+      libplist \
+      libproxy \
+      libpsl \
+      libsass \
+      libseccomp \
+      libsecret \
+      libsigc++ \
+      libsigc++3 \
+      libsigsegv \
+      libssh \
+      libssh2 \
+      libtasn1 \
+      libtiff \
+      libunistring \
+      libunwind \
+      liburing \
+      libusb \
+      libusb-compat \
+      libusbmuxd \
+      libuv \
+      libwebp \
+      libwmf \
+      libwnck3 \
+      libwpd \
+      libwpg \
+      libxml2 \
+      libxslt \
+      libyaml \
+      libzip \
+      lz4 \
+      mhash \
+      mlt \
+      mm \
+      mpfr \
+      ncurses \
+      openexr \
+      opus \
+      opusfile \
+      orc \
+      pcre \
+      pcre2 \
+      polkit \
+      popt \
+      pycurl \
+      pyparsing \
+      python-Jinja2 \
+      python-MarkupSafe \
+      python-PyYAML \
+      python-appdirs \
+      python-certifi \
+      python-cffi \
+      python-chardet \
+      python-charset-normalizer \
+      python-distro \
+      python-dnspython \
+      python-doxypypy \
+      python-doxyqml \
+      python-future \
+      python-idna \
+      python-notify2 \
+      python-packaging \
+      python-pbr \
+      python-pillow \
+      python-ply \
+      python-pycparser \
+      python-pygments \
+      python-random2 \
+      python-requests \
+      python-setuptools_scm \
+      python-six \
+      python-tomli \
+      python-urllib3 \
+      qca \
+      qrencode \
+      qtkeychain \
+      quazip \
+      readline \
+      rpcsvc-proto \
+      rttr \
+      rubygem-asciidoctor \
+      sbc \
+      serf \
+      sg3_utils \
+      shared-desktop-ontologies \
+      shared-mime-info \
+      slang \
+      slang1 \
+      spirv-llvm-translator \
+      t1lib \
+      tdb \
+      tevent \
+      utf8proc \
+      vid.stab \
+      vte \
+      woff2 \
+      xapian-core \
+      xxHash \
+      zlib \
+      zstd
+
+# series n
+RUN echo y | slackpkg install \
+      ca-certificates \
+      curl \
+      cyrus-sasl \
+      gnutls \
+      nettle \
+      nghttp2 \
+      p11-kit \
+      rsync
 
 RUN update-ca-certificates --fresh
 
