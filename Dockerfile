@@ -11,7 +11,7 @@ RUN echo n | slackpkg update
 # Returns an error if there are no packages to upgrade
 # RUN echo y | slackpkg upgrade-all
 
-COPY *tagfile .
+COPY *tagfile ./
 RUN echo y | slackpkg install $(cat ap-tagfile)
 RUN echo y | slackpkg install $(cat d-tagfile)
 RUN echo y | slackpkg install $(cat l-tagfile)
