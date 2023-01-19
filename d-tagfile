@@ -29,3 +29,5 @@ python3
 ruby
 rust
 sassc
+strace
+
