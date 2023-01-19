@@ -12,6 +12,7 @@ RUN echo n | slackpkg update
 # RUN echo y | slackpkg upgrade-all
 
 COPY *tagfile ./
+RUN echo y | slackpkg install $(cat a-tagfile)
 RUN echo y | slackpkg install $(cat ap-tagfile)
 RUN echo y | slackpkg install $(cat d-tagfile)
 RUN echo y | slackpkg install $(cat l-tagfile)
