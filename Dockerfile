@@ -246,6 +246,8 @@ RUN echo y | slackpkg install \
       curl \
       cyrus-sasl \
       gnutls \
+      gpgme \
+      libgpg-error \
       nettle \
       nghttp2 \
       p11-kit \
