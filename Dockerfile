@@ -8,7 +8,12 @@ ENV USER=root
 RUN echo n | slackpkg update
 
 #Returns an error if there are no packages to upgrade
-RUN echo y | slackpkg upgrade-all || true
+RUN /bin/bash -c 'set -e; \
+    r=0; \
+    echo y | slackpkg upgrade-all || r=$?; \
+    if [ $r -ne 0 ] && [ $r -ne 20 ]; then \
+      exit $r; \
+    fi'
 
 # series a
 RUN echo y | slackpkg install \
