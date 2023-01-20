@@ -29,7 +29,7 @@ post a question in the
     steps:
     - uses: actions/checkout@v3
     - name: Change default mirror
-      run: echo "https://mirrors.ocf.berkeley.edu/slackware/slackware-15.0/" > /etc/slackpkg/mirrors
+      run: echo "https://mirrors.ocf.berkeley.edu/slackware/slackware64-15.0/" > /etc/slackpkg/mirrors
     - name: Install dependencies
       run: |
         echo n | slackpkg update
@@ -60,9 +60,9 @@ used each time:
           http://ftp.sunet.se/mirror/slackware.com/slackware64-15.0/ \
           http://ftp.tu-chemnitz.de/pub/linux/slackware/slackware64-15.0/ \
           http://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/    \
-          http://slackware.mirrors.tds.net/pub/slackware/slackware64-15.0/
+          http://slackware.mirrors.tds.net/pub/slackware/slackware64-15.0/ \
         )
-        echo ${mirror[ $RANDOM % 4]} > /etc/slackpkg/mirrors
+        echo ${mirror[$(shuf -i 0-3 -n 1)]} > /etc/slackpkg/mirrors
 ```
 
 ## Customize
