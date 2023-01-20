@@ -33,8 +33,8 @@ RUN echo y | slackpkg install \
       cmake \
       doxygen \
       flex \
-      gcc \
-      gcc-g++ \
+      gcc-11 \
+      g++ \
       gettext-tools \
       git \
       guile \
