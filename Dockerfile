@@ -17,7 +17,8 @@ RUN /bin/bash -c 'set -e; \
 
 # series a
 RUN echo y | slackpkg install \
-      dcron
+      dcron \
+      dbus
 
 # series ap
 RUN echo y | slackpkg install \
@@ -62,6 +63,7 @@ RUN echo y | slackpkg install \
 RUN echo y | slackpkg install \
       M2Crypto \
       Mako \
+      boost \
       brotli \
       cfitsio \
       chmlib \
@@ -93,7 +95,6 @@ RUN echo y | slackpkg install \
       gmp \
       gnu-efi \
       gobject-introspection \
-      grantlee \
       graphene \
       graphite2 \
       gsl \
@@ -112,7 +113,6 @@ RUN echo y | slackpkg install \
       libarchive \
       libasyncns \
       libatasmart \
-      libcanberra \
       libcap \
       libcap-ng \
       libclc \
@@ -121,14 +121,12 @@ RUN echo y | slackpkg install \
       libedit \
       libevent \
       libexif \
-      libfakekey \
       libffi \
       libgnome-keyring \
       libgnt \
       libgpod \
       libgsf \
       libgtop \
-      libical \
       libidl \
       libidn \
       libidn2 \
@@ -141,8 +139,6 @@ RUN echo y | slackpkg install \
       libnl3 \
       libnsl \
       libnss_nis \
-      libodfgen \
-      libopusenc \
       libpcap \
       libplist \
       libproxy \
@@ -165,7 +161,6 @@ RUN echo y | slackpkg install \
       libusbmuxd \
       libuv \
       libwebp \
-      libwmf \
       libwnck3 \
       libwpd \
       libwpg \
@@ -216,9 +211,7 @@ RUN echo y | slackpkg install \
       python-six \
       python-tomli \
       python-urllib3 \
-      qca \
       qrencode \
-      qtkeychain \
       quazip \
       readline \
       rpcsvc-proto \
@@ -237,7 +230,6 @@ RUN echo y | slackpkg install \
       tevent \
       utf8proc \
       vid.stab \
-      vte \
       woff2 \
       xapian-core \
       xxHash \
@@ -252,6 +244,7 @@ RUN echo y | slackpkg install \
       gnutls \
       gpgme \
       libassuan \
+      libgcrypt \
       libgpg-error \
       nettle \
       nghttp2 \
