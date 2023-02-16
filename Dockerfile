@@ -5,7 +5,7 @@ USER root
 # why doesn't this get set automatically, like HOME does?
 ENV USER=root
 
-RUN echo n | slackpkg update
+RUN echo y | slackpkg update
 
 #Returns an error if there are no packages to upgrade
 RUN /bin/bash -c 'set -e; \
