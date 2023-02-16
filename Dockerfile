@@ -239,6 +239,7 @@ RUN echo y | slackpkg install \
 # series n
 RUN echo y | slackpkg install \
       ca-certificates \
+      c-ares \
       curl \
       cyrus-sasl \
       gnutls \
@@ -292,7 +293,7 @@ RUN /bin/bash -c 'cd /tmp \
   && cd /tmp/curl-7.87.0 \
   && autoreconf -if \
   && mkdir build && cd build \
-  && ../configure --enable-warnings --enable-werror --with-openssl \
+  && ../configure --with-openssl --with-libssh2 --with-gssapi --enable-ares --enable-static=no --without-ca-bundle --with-ca-path=/etc/ssl/certs \
   && make -j$(nproc) \
   && make -C tests -j$(nproc) \
   && cd .. && rm -rf build && mkdir build && cd build \
