@@ -18,7 +18,8 @@ RUN /bin/bash -c 'set -e; \
 # series a
 RUN echo y | slackpkg install \
       dcron \
-      dbus
+      dbus \
+      infozip
 
 # series ap
 RUN echo y | slackpkg install \
@@ -78,7 +79,6 @@ RUN echo y | slackpkg install \
       fftw \
       gc \
       gcr \
-      gd \
       gegl \
       gexiv2 \
       giflib \
