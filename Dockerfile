@@ -288,7 +288,7 @@ RUN slapt-get -u
 # Tests
 # This just tests to make sure some basic development tools are
 # installed and their dependencies are satisfied.
-ARG CURL_VER="$CURL_VER"
+ARG CURL_VER=7.88.1
 RUN /bin/bash -c 'cd /tmp \
   && curl -LO https://github.com/curl/curl/releases/download/curl-7_88_1/curl-$CURL_VER.tar.xz \
   && tar xf curl*xz -C /tmp \
@@ -306,7 +306,7 @@ RUN /bin/bash -c 'cd /tmp \
   && rm -rf /tmp/curl*'
 
 # Test a meson build
-ARG RMW_VER="$RMW_VER"
+ARG RMW_VER=0.9.0
 RUN /bin/bash -c 'cd /tmp \
   && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v$RMW_VER/rmw-$RMW_VER.tar.gz \
   && tar xf rmw-$RMW_VER.tar.gz \
