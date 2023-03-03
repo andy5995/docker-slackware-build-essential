@@ -308,8 +308,8 @@ RUN /bin/bash -c 'cd /tmp \
 # Test a meson build
 ARG RMW_VER=0.9.0
 RUN /bin/bash -c 'cd /tmp \
-  && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v$RMW_VER/rmw-$RMW_VER.tar.gz \
-  && tar xf rmw-$RMW_VER.tar.gz \
+  && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v$RMW_VER/rmw-$RMW_VER.tar.xz \
+  && tar xf rmw-$RMW_VER.tar.xz \
   && cd rmw-$RMW_VER \
   && meson setup _build \
   && cd _build \
