@@ -290,7 +290,7 @@ RUN slapt-get -u
 # installed and their dependencies are satisfied.
 ARG CURL_VER="$CURL_VER"
 RUN /bin/bash -c 'cd /tmp \
-  && curl -LO https://github.com/curl/curl/releases/download/curl-7_88_1/curl-$CURL_VER}.tar.xz \
+  && curl -LO https://github.com/curl/curl/releases/download/curl-7_88_1/curl-$CURL_VER.tar.xz \
   && tar xf curl*xz -C /tmp \
   && cd /tmp/curl-$CURL_VER \
   && autoreconf -if \
