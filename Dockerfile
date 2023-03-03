@@ -288,11 +288,11 @@ RUN slapt-get -u
 # Tests
 # This just tests to make sure some basic development tools are
 # installed and their dependencies are satisfied.
-ARG CURL_VER="${CURL_VER}"
+ARG CURL_VER="$CURL_VER"
 RUN /bin/bash -c 'cd /tmp \
-  && curl -LO https://github.com/curl/curl/releases/download/curl-7_88_1/curl-${CURL_VER}.tar.xz \
+  && curl -LO https://github.com/curl/curl/releases/download/curl-7_88_1/curl-$CURL_VER}.tar.xz \
   && tar xf curl*xz -C /tmp \
-  && cd /tmp/curl-${CURL_VER} \
+  && cd /tmp/curl-$CURL_VER \
   && autoreconf -if \
   && mkdir build && cd build \
   && ../configure --with-openssl --with-libssh2 --with-gssapi --enable-ares --enable-static=no --without-ca-bundle --with-ca-path=/etc/ssl/certs \
@@ -306,11 +306,11 @@ RUN /bin/bash -c 'cd /tmp \
   && rm -rf /tmp/curl*'
 
 # Test a meson build
-ARG RMW_VER="${RMW_VER}"
+ARG RMW_VER="$RMW_VER"
 RUN /bin/bash -c 'cd /tmp \
-  && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v${RMW_VER}/rmw-${RMW_VER}.tar.gz \
-  && tar xf rmw-${RMW_VER}.tar.gz \
-  && cd rmw-${RMW_VER} \
+  && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v$RMW_VER/rmw-$RMW_VER.tar.gz \
+  && tar xf rmw-$RMW_VER.tar.gz \
+  && cd rmw-$RMW_VER \
   && meson setup _build \
   && cd _build \
   && meson compile \
