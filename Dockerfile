@@ -250,7 +250,8 @@ RUN echo y | slackpkg install \
       nettle \
       nghttp2 \
       p11-kit \
-      rsync
+      rsync \
+      stunnel
 
 RUN update-ca-certificates --fresh
 
