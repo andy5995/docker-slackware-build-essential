@@ -273,6 +273,7 @@ RUN sbopkg -B -i  \
     python3-progress  \
     slpkg" \
     -e stop &&  \
+  sed -i 's/downloader\ \=\ \"lftp\"/downloader\ \=\ \"curl\"/' /etc/slpkg/slpkg.toml && \
   rm -rf /var/cache/sbopkg /tmp/*
 RUN slpkg update --yes
 
