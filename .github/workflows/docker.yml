@@ -11,7 +11,7 @@ on:
       - '.github/workflows/docker.yml'
       - 'Dockerfile'
   schedule:
-    - cron: '40 22 6/15 * *'
+    - cron: '40 04 6/15 * *'
 
 jobs:
   docker:
