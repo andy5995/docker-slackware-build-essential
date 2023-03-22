@@ -10,8 +10,8 @@ on:
     paths:
       - '.github/workflows/docker.yml'
       - 'Dockerfile'
-  schedule:
-    - cron: '40 04 6/15 * *'
+  #schedule:
+    #- cron: '40 04 6/15 * *'
 
 jobs:
   docker:
