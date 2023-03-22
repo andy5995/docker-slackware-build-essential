@@ -9,6 +9,8 @@ in a GitHub action.
 The image can be pulled from [Docker
 Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential).
 
+    docker pull andy5995/slackware-build-essential
+
 ## Included package managers
 
 * [slackpkg](https://docs.slackware.com/slackware:slackpkg)
