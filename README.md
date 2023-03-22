@@ -99,10 +99,7 @@ Otherwise, if you've already cloned this repo:
 Once you've confirmed you have files in `./slapt-get` (the directory would be
 empty if not cloned), you can run `docker build`:
 
-    docker build -t <name:tag> \
-      --build-arg SBOPKG_VER=0.38.2  \
-      --build-arg SBOPKG_NAME=sbopkg-0.38.2-noarch-1_wsr.tgz  \
-      .
+    docker build -t <name:tag> .
 
 ## LICENSE
 
