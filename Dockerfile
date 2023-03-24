@@ -265,11 +265,11 @@ RUN /bin/bash -c 'curl -LO https://github.com/sbopkg/sbopkg/releases/download/$S
   rm $SBOPKG_NAME*'
 
 # Install slapt-get
-COPY ./slapt-get /slapt-get
-RUN /bin/bash -c 'cd /slapt-get && \
+RUN /bin/bash -c 'git clone --depth 1 -b 0.11.8 https://github.com/jaos/slapt-get && \
+  cd slapt-get && \
   ./slapt-get.Slackbuild && \
   installpkg slapt*txz && \
-  cd / && \
+  cd - && \
   rm -rf slapt-get'
 
 # Tests
