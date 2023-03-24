@@ -263,18 +263,6 @@ RUN /bin/bash -c 'curl -LO https://github.com/sbopkg/sbopkg/releases/download/$S
   sha256sum -c $SBOPKG_NAME.sha256sum &&  \
   installpkg $SBOPKG_NAME &&  \
   rm $SBOPKG_NAME*'
-RUN sbopkg -r
-
-# Install slpkg and its dependencies
-RUN sbopkg -B -i  \
-    "greenlet  \
-    SQLAlchemy  \
-    python3-pythondialog  \
-    python3-progress  \
-    slpkg" \
-    -e stop &&  \
-  rm -rf /var/cache/sbopkg /tmp/*
-RUN slpkg update --yes
 
 # Install slapt-get
 COPY ./slapt-get /slapt-get
@@ -283,7 +271,6 @@ RUN /bin/bash -c 'cd /slapt-get && \
   installpkg slapt*txz && \
   cd / && \
   rm -rf slapt-get'
-RUN slapt-get -u
 
 # Tests
 # This just tests to make sure some basic development tools are
