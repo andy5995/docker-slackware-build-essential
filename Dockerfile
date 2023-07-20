@@ -275,9 +275,10 @@ RUN /bin/bash -c 'git clone --depth 1 -b 0.11.8 https://github.com/jaos/slapt-ge
 # Tests
 # This just tests to make sure some basic development tools are
 # installed and their dependencies are satisfied.
-ARG CURL_VER=8.0.1
+ARG CURL_VER=8.2.0
+
 RUN /bin/bash -c 'cd /tmp \
-  && curl -LO https://github.com/curl/curl/releases/download/curl-8_0_1/curl-$CURL_VER.tar.xz \
+  && curl -LO https://github.com/curl/curl/releases/download/curl-8_2_0/curl-$CURL_VER.tar.xz \
   && tar xf curl*xz -C /tmp \
   && cd /tmp/curl-$CURL_VER \
   && autoreconf -if \
