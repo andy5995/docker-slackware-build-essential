@@ -294,7 +294,7 @@ RUN /bin/bash -c 'cd /tmp \
   && rm -rf /tmp/curl*'
 
 # Test a meson build
-ARG RMW_VER=0.9.0
+ARG RMW_VER=0.9.1
 RUN /bin/bash -c 'cd /tmp \
   && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v$RMW_VER/rmw-$RMW_VER.tar.xz \
   && tar xf rmw-$RMW_VER.tar.xz \
