@@ -85,19 +85,6 @@ When you're ready to use the image in your new workflow, simply change the
 
 ## Building the Image Locally
 
-You'll need the slapt-get submodule for the build to complete. If you haven't
-cloned this repo yet, you can get the submodule at the same time:
-
-     git clone https://github.com/andy5995/docker-slackware-build-essential --recurse-submodules
-
-Otherwise, if you've already cloned this repo:
-
-    git submodule init
-    git submodule update
-
-Once you've confirmed you have files in `./slapt-get` (the directory would be
-empty if not cloned), you can run `docker build`:
-
     docker build -t <name:tag> .
 
 ## LICENSE
