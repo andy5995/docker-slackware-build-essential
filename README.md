@@ -9,7 +9,7 @@ in a GitHub action.
 The image can be pulled from [Docker
 Hub](https://hub.docker.com/repository/docker/andy5995/slackware-build-essential).
 
-    docker pull andy5995/slackware-build-essential
+    docker pull andy5995/slackware-build-essential:15.0
 
 ## Included package managers
 
@@ -77,7 +77,7 @@ tokens](https://docs.docker.com/build/ci/github-actions/).
 
 When you're ready to use the image in your new workflow, simply change the
 'container' line (shown in the example workflow above).
-  
+
 ## Projects using this in their CI:
 
 * [rmw](https://github.com/theimpossibleastronaut/rmw)
