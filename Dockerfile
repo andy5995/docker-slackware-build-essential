@@ -244,6 +244,7 @@ RUN echo y | slackpkg install \
       cyrus-sasl \
       gnutls \
       gpgme \
+      krb5 \
       libassuan \
       libgcrypt \
       libgpg-error \
