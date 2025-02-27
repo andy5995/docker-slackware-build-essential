@@ -256,7 +256,7 @@ RUN echo y | slackpkg install \
 RUN update-ca-certificates --fresh
 
 # Get and install sbopkg
-ARG SBOPKG_VER=0.38.2
+ARG SBOPKG_VER=0.38.3
 ARG SBOPKG_NAME=sbopkg-$SBOPKG_VER-noarch-1_wsr.tgz
 COPY ./$SBOPKG_NAME.sha256sum .
 RUN /bin/bash -c 'curl -LO https://github.com/sbopkg/sbopkg/releases/download/$SBOPKG_VER/$SBOPKG_NAME && \
@@ -275,10 +275,12 @@ RUN /bin/bash -c 'git clone --depth 1 -b 0.11.10 https://github.com/jaos/slapt-g
 # Tests
 # This just tests to make sure some basic development tools are
 # installed and their dependencies are satisfied.
-ARG CURL_VER=8.2.0
-
+ARG CURL_MAJ=8
+ARG CURL_MIN=12
+ARG CURL_PATCH=1
+ARG CURL_VER=${CURL_MAJ}.${CURL_MIN}.${CURL_PATCH}
 RUN /bin/bash -c 'cd /tmp \
-  && curl -LO https://github.com/curl/curl/releases/download/curl-8_2_0/curl-$CURL_VER.tar.xz \
+  && curl -LO https://github.com/curl/curl/releases/download/curl-${CURL_MAJ}_${CURL_MIN}_${CURL_PATCH}/curl-$CURL_VER.tar.xz \
   && tar xf curl*xz -C /tmp \
   && cd /tmp/curl-$CURL_VER \
   && autoreconf -if \
@@ -294,7 +296,7 @@ RUN /bin/bash -c 'cd /tmp \
   && rm -rf /tmp/curl*'
 
 # Test a meson build
-ARG RMW_VER=0.9.1
+ARG RMW_VER=0.9.3
 RUN /bin/bash -c 'cd /tmp \
   && curl -LO https://github.com/theimpossibleastronaut/rmw/releases/download/v$RMW_VER/rmw-$RMW_VER.tar.xz \
   && tar xf rmw-$RMW_VER.tar.xz \
