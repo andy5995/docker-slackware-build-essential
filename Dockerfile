@@ -277,7 +277,7 @@ RUN /bin/bash -c 'git clone --depth 1 -b 0.11.11 https://github.com/jaos/slapt-g
 # This just tests to make sure some basic development tools are
 # installed and their dependencies are satisfied.
 ARG CURL_MAJ=8
-ARG CURL_MIN=12
+ARG CURL_MIN=14
 ARG CURL_PATCH=1
 ARG CURL_VER=${CURL_MAJ}.${CURL_MIN}.${CURL_PATCH}
 RUN /bin/bash -c 'cd /tmp \
