@@ -23,6 +23,7 @@ RUN echo y | slackpkg install \
 
 # series ap
 RUN echo y | slackpkg install \
+      groff \
       sqlite
 
 # series d
