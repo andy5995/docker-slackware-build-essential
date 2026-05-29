@@ -54,7 +54,6 @@ RUN echo y | slackpkg install \
       pkg-config \
       python-pip \
       python-setuptools \
-      python2 \
       python3 \
       ruby \
       rust \
@@ -63,14 +62,11 @@ RUN echo y | slackpkg install \
 
 # series l
 RUN echo y | slackpkg install \
-      M2Crypto \
       Mako \
       boost \
       brotli \
       cfitsio \
-      chmlib \
       clucene \
-      cryfs \
       dotconf \
       eigen3 \
       elfutils \
@@ -83,7 +79,6 @@ RUN echo y | slackpkg install \
       gegl \
       gexiv2 \
       giflib \
-      gjs \
       glib \
       glib-networking \
       glib2 \
@@ -108,9 +103,7 @@ RUN echo y | slackpkg install \
       isl \
       iso-codes \
       jansson \
-      jemalloc \
       kdsoap \
-      keybinder3 \
       libarchive \
       libasyncns \
       libatasmart \
@@ -118,14 +111,12 @@ RUN echo y | slackpkg install \
       libcap-ng \
       libclc \
       libcue \
-      libdmtx \
       libedit \
       libevent \
       libexif \
       libffi \
       libgnome-keyring \
       libgnt \
-      libgpod \
       libgsf \
       libgtop \
       libidl \
@@ -135,7 +126,6 @@ RUN echo y | slackpkg install \
       libmng \
       libmpc \
       libnih \
-      libnjb \
       libnl \
       libnl3 \
       libnsl \
@@ -170,7 +160,6 @@ RUN echo y | slackpkg install \
       libyaml \
       libzip \
       lz4 \
-      mhash \
       mlt \
       mm \
       mpfr \
@@ -221,16 +210,12 @@ RUN echo y | slackpkg install \
       sbc \
       serf \
       sg3_utils \
-      shared-desktop-ontologies \
       shared-mime-info \
       slang \
       slang1 \
-      spirv-llvm-translator \
-      t1lib \
       tdb \
       tevent \
       utf8proc \
-      vid.stab \
       woff2 \
       xapian-core \
       xxHash \
