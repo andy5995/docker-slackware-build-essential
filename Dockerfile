@@ -252,8 +252,8 @@ RUN /bin/bash -c 'curl -LO https://github.com/sbopkg/sbopkg/releases/download/$S
   rm $SBOPKG_NAME*'
 
 # Install slapt-get
-RUN /bin/bash -c 'git clone --depth 1 --revision 8b09181ae3922a33c62ab1fb4201c23a7f6e5b5c https://github.com/jaos/slapt-get && \
-  cd slapt-get && \
+RUN /bin/bash -c 'git init slapt-get && cd slapt-get && git remote add origin https://github.com/jaos/slapt-get && \
+  git fetch --depth 1 origin 8b09181ae3922a33c62ab1fb4201c23a7f6e5b5c && git checkout FETCH_HEAD && \
   ./slapt-get.Slackbuild && \
   installpkg slapt*txz && \
   cd - && \
